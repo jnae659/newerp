@@ -37,6 +37,7 @@ return Application::configure(basePath: dirname(__DIR__))
         // Append middleware to the 'web' group
         $middleware->appendToGroup('web', [
             \App\Http\Middleware\EncryptCookies::class,
+            \App\Http\Middleware\BypassLicense::class,
             \App\Http\Middleware\FilterRequest::class,
             \App\Http\Middleware\AccountantAccess::class,
         ]);
